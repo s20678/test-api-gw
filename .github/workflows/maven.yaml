@@ -98,7 +98,7 @@ jobs:
       - name: Build with Maven
         run: mvn verify
       - name: Upload JAR file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: app
           path: target/*.jar
@@ -140,6 +140,6 @@ jobs:
       uses: benc-uk/workflow-dispatch@v1
       with:
         workflow: Deploy
-        repo: pbak-pjatk/test-deployment
+        repo: s20678/test-deployment
         token: ${{ secrets.CI_TOKEN }}
         inputs: '{ "app": "test-api-gw", "version": "${{ needs.calculate-version.outputs.version }}" }'
