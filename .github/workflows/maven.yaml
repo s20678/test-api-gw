@@ -98,7 +98,7 @@ jobs:
       - name: Build with Maven
         run: mvn verify
       - name: Upload JAR file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@3f5186b9c2dc7df43f9a916fcab1ae1f1b9f52f7
         with:
           name: app
           path: target/*.jar
